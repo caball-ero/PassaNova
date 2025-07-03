@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Are you sure you want to delete your password?</h1>
+
+<form method="POST" action="/vault/delete/{{ id }}">
+    <button type="submit" value="yes" name="action">Yes</button> <button type="submit" value="no" name="action">No</button>
+</form>
+
+{% endblock content %}
+

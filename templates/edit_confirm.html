@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+    <h1>Enter your Masterkey to Edit your {{site}} Password</h1>
+    <div>
+        <form method="POST" action="/vault/edit/confirm/{{ id }}">
+            <input type="password" name="masterkey" placeholder="Enter your masterkey..">
+            <button type="submit" value="confirm" name="action">Confirm delete</button>
+            <button type="submit" value="cancel" name="action">Cancel</button>
+        </form>
+    </div>
+
+    <div>
+        {% with messages=get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <ul>
+                        <li>{{message}}</li>
+                    </ul>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+{% endblock content %}

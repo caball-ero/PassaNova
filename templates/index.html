@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if session.username %}
+<h1>Hello {{session.username}}</h1>
+{% endif %}
+<h3>Welcome to the Password Manager</h3>
+<h4>Enjoy your security with Password Manager</h4>
+{% endblock content %}

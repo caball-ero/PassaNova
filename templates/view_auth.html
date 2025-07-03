@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Enter your masterkey to view your password</h1>
+
+<form method="POST">
+    <input type="password" name="masterkey" placeholder="Enter your masterkey..">
+    <input type="submit" name="submit">
+</form>
+
+{% endblock content %}

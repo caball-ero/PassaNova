@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Enter your Masterkey to Confirm Deleting your Password</h1>
+
+<div>
+    <h5>Warning!</h5>
+    <p>If you delete your password, there is no way of getting it back again!</p>
+</div>
+
+<form method="POST" action="/vault/delete/confirm/{{ id }}">
+    <div>
+        <input type="password" name="masterkey" placeholder="Enter your masterkey..">
+        <button type="submit" value="confirm" name="action">Confirm delete</button>
+        <button type="submit" value="cancel" name="action">Cancel</button>
+    </div>
+</form>
+
+<div>
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <ul>
+                    <li>{{message}}</li>
+                </ul>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+{% endblock content %}

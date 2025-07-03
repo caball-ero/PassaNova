@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Vault</h1>
+
+<div>
+    <p><a href="/vault/add">Add Password</a></p>
+    <div>
+        <ul>
+            {% for password in passwords %}
+                <li>{{password.site}}</li>
+                <a href="/vault/delete/{{password.id}}"><small>Delete</small></a> <a href="/vault/edit/confirm/{{password.id}}"><small>Edit</small></a> <a href="/vault/view_auth/{{password.id}}"><small>View</small></a>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

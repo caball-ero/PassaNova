@@ -1,0 +1,18 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Ignore logs
+*.log
+
+# Ignore environment variables or config files (if any)
+.env
+
+# Ignore SQLite database files (optional, if not meant to be tracked)
+*.db
+
+# Ignore the secrete.py
+secrete.py

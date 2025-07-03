@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Register Page</h1>
+<div class="register-form">
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter username" required>
+        <input type="password" name="password" placeholder="Create masterkey" required>
+        <input type="password" name="confirm" placeholder="Confirm masterkey" required>
+        <input type="submit" value="Register">
+    </form>
+        <div>
+        {% with messages= get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <a href="/login">Already have an account?</a>
+</div>
+
+
+{% endblock content %}

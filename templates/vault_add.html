@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add new password</h1>
+<div>
+    <form method="POST">
+        <input type="text" name="site" placeholder="Enter the website name" required>
+        <input type="text" name="username" placeholder="Enter the username of the website" required>
+        <input type="password" name="password" placeholder="Enter the password for the website" required>
+        <input type="password" name="masterkey" placeholder="Enter your masterkey" required>
+        
+        
+        <input type="submit" value="Add Password">
+        <a href="/vault">Back to Vault</a>
+    </form>
+</div>
+<div>
+    {% with messages= get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <ul>
+                <li>{{message}}</li>
+            </ul>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+{% endblock content %}

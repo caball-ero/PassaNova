@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Edit</h1>
+<form method="POST">
+    {{form.hidden_tag()}}
+    <p>{{form.site_username.label}} {{form.site_username()}}</p>
+    <p>{{form.password.label}} {{form.password()}}</p>
+    <p>{{form.masterkey.label}} {{form.masterkey()}}</p>
+    <p>{{form.submit()}}</p>
+</form>
+
+{% endblock content %}
